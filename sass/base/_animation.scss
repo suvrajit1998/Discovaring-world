@@ -1,0 +1,64 @@
+@keyframes moonride {
+  0% {
+    opacity: 0;
+    transform: translateX(40rem) scale(0.5) translateY(-7rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) translateY(0);
+  }
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  80% {
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes movetoright {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes movetotop {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlights {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  70% {
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,42 @@
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  margin: 0 auto;
+  justify-content: center;
+  column-gap: 5rem;
+}
+.comparision {
+  position: relative;
+  &-photo {
+    width: 60%;
+    position: absolute;
+    border-radius: 3px;
+    outline-offset: 1.5rem;
+    z-index: 10;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    transition: all 0.2s;
+
+    &--p1 {
+      top: -3rem;
+      left: 0;
+    }
+    &--p2 {
+      top: 0;
+      right: 2rem;
+    }
+    &--p3 {
+      top: 8rem;
+      left: 20%;
+    }
+
+    &:hover {
+      z-index: 20;
+      transform: translateY(-0.5rem) scale(1.05);
+      box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+      outline: 1.2rem solid $color-text-btn;
+    }
+  }
+  &:hover &-photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
