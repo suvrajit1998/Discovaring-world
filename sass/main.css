@@ -197,10 +197,11 @@ body {
   font-weight: 400;
   display: block;
   letter-spacing: 0.6rem;
-  -webkit-animation: movetoright 1s ease-out 1s;
-          animation: movetoright 1s ease-out 1s;
+  -webkit-animation: movetoright 1s ease-out forwards 1s;
+          animation: movetoright 1s ease-out forwards 1s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  opacity: 0;
 }
 
 .heading-secondary {
@@ -222,8 +223,7 @@ body {
 .heading-secondary:hover {
   -webkit-transform: skewX(15deg) skewY(2deg) scale(1.1);
           transform: skewX(15deg) skewY(2deg) scale(1.1);
-  -webkit-box-shadow: 0.5rem 1rem 2rem rgba(51, 51, 51, 0.2);
-          box-shadow: 0.5rem 1rem 2rem rgba(51, 51, 51, 0.2);
+  text-shadow: 0.5rem 1rem 2rem rgba(51, 51, 51, 0.2);
 }
 
 .heading-tartiary {
@@ -244,12 +244,16 @@ body {
   margin-bottom: 2rem;
 }
 
-.u-margin-bottom-big {
-  margin-bottom: 18rem;
+.u-margin-bottom-mideum {
+  margin-bottom: 4rem;
 }
 
-.u-margin-top-big {
-  margin-top: -18rem;
+.u-margin-bottom-big {
+  margin-bottom: 4rem;
+}
+
+.u-margin-top-bigs {
+  margin-top: 5rem;
 }
 
 .u-text-center {
@@ -314,7 +318,7 @@ body {
           transform: scale(0.95);
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.6rem;
@@ -352,6 +356,15 @@ body {
 
 .btn-white::after {
   background: #ffffff;
+}
+
+.btn-blue {
+  color: #ffffff;
+  background: #00ffea;
+}
+
+.btn-blue::after {
+  background: #00ffea;
 }
 
 .btn::after {
@@ -405,6 +418,103 @@ body {
           transform: translateY(-1px);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.15);
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form-input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+  border: none;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.5);
+  color: inherit;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.form-input::-ms-input-placeholder {
+  color: #fcf6f61e;
+}
+
+.form-input:focus:invalid {
+  border-bottom: 3px solid #00ffea;
+}
+
+.form-input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.1);
+          box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.1);
+  border-bottom: 3px solid #8400ff;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  margin-left: 2rem;
+  font-weight: 700;
+  display: block;
+}
+
+.form-input:placeholder-shown + .form-label {
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-redio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.form-redio-input {
+  display: none;
+}
+
+.form-redio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form-redio-button {
+  display: inline-block;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid #00ffea;
+  border-radius: 50%;
+  left: 0;
+  top: -0.5rem;
+}
+
+.form-redio-button::after {
+  content: "";
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: #8400ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.form-redio-input:checked ~ .form-redio-label .form-redio-button::after {
+  opacity: 1;
 }
 
 .header {
@@ -473,5 +583,30 @@ body {
   background: #e4e2e2d7;
   padding: 25rem 0;
   margin-top: -10rem;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#8400ff), to(#9a88e9b0));
+  background: linear-gradient(to top, #8400ff, #9a88e9b0);
+}
+
+.book {
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.6) 50%, transparent 50%), url(https://images.unsplash.com/photo-1519607811513-d734618713bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  height: 50rem;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(51, 51, 51, 0.4);
+          box-shadow: 0 1.5rem 4rem rgba(51, 51, 51, 0.4);
+}
+
+.book-form {
+  height: 50%;
+  width: 50%;
+  padding: 5rem;
 }
 /*# sourceMappingURL=main.css.map */

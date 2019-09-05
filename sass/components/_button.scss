@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -33,6 +34,15 @@
 
     &::after {
       background: $color-white;
+    }
+  }
+
+  &-blue {
+    color: $color-white;
+    background: $color-text-btn;
+
+    &::after {
+      background: $color-text-btn;
     }
   }
 
